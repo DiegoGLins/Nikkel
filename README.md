@@ -1,5 +1,5 @@
 # Nikkel
 
-Este é a aplicação Nikel do projeto Codaí.
+Este é uma aplicação Nikel do projeto Codaí.
 
-This is the Nikel application of the Codaí project.
+This is a Nikel application of the Codaí project.
