@@ -2,7 +2,7 @@ const mymodal = new bootstrap.Modal('#transaction-Modal');
 let logged = sessionStorage.getItem('logged');
 const session = localStorage.getItem('session');
 let data = {
-  transaction: [],
+  transactions: [],
 };
 
 document.getElementById('button-logout').addEventListener('click', logout);
@@ -19,7 +19,7 @@ document
       'input[name="type-input"]:checked'
     ).value;
 
-    data.transaction.unshift({
+    data.transactions.unshift({
       value: value,
       type: type,
       description: description,
@@ -29,7 +29,7 @@ document
     saveData(data);
     e.target.reset();
     mymodal.hide();
-    gettransaction();
+    gettransactions();
 
     alert('Lançamento adicionado com sucesso.');
   });
@@ -52,7 +52,7 @@ function checkLogged() {
     data = JSON.parse(dataUser);
   }
 
-  gettransaction();
+  gettransactions();
 }
 
 function logout() {
@@ -62,12 +62,12 @@ function logout() {
   window.location.href = 'index.html';
 }
 
-function gettransaction() {
-  const transaction = data.transaction;
+function gettransactions() {
+  const transactions = data.transactions;
   let transactionHtml = ``;
 
-  if (transaction.length) {
-    transaction.forEach(item => {
+  if (transactions.length) {
+    transactions.forEach(item => {
       let type = 'Entrada';
       if (item.type === '2') {
         type = 'Saída';
@@ -84,7 +84,7 @@ function gettransaction() {
     });
   }
 
-  document.getElementById('transaction-list').innerHTML = transactionHtml;
+  document.getElementById('transactions-list').innerHTML = transactionHtml;
 }
 function saveData(data) {
   localStorage.setItem(data.login, JSON.stringify(data));
