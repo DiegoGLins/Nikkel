@@ -1,5 +1,5 @@
 # Nikkel
 
-Este é um projeto de uma aplicação de gerenciamento de gastos realizados: Codaí
+Este é uma aplicação Nikel do projeto Codaí.
 
-This is a project for an expense management application: Codaí
+This is a Nikel application of the Codaí project.
