@@ -61,6 +61,31 @@ function logout() {
   window.location.href = 'index.html';
 }
 
+function gettransactions() {
+  const transactions = data.transactions;
+  let transactionHtml = ``;
+
+  if (transactions.length) {
+    transactions.forEach(item => {
+      let type = 'Entrada';
+
+      if (item.type === '2') {
+        type = 'Saída';
+      }
+
+      transactionHtml += `
+        <tr>
+          <th scope="row">${item.date}</th>
+          <td>${item.value.toFixed(2)}</td>
+          <td>${type}</td>
+          <td>${item.description}</td>
+        </tr>
+      `;
+    });
+  }
+
+  document.getElementById('transactions-list').innerHTML = transactionHtml;
+}
 function saveData(data) {
   localStorage.setItem(data.login, JSON.stringify(data));
 }
