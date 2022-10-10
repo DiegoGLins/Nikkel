@@ -1,15 +1,13 @@
 const mymodal = new bootstrap.Modal('#transaction-Modal');
 let logged = sessionStorage.getItem('logged');
 const session = localStorage.getItem('session');
-let data = {
-  transactions: [],
-};
+let data = { transactions: [] };
 
 document.getElementById('button-logout').addEventListener('click', logout);
 
 //ADICIONAR LANÇAMENTO
 document
-  .getElementById('transaction-form')
+  .getElementById('transactions-form')
   .addEventListener('submit', function (e) {
     e.preventDefault();
     const value = parseFloat(document.getElementById('value-input').value);
@@ -29,6 +27,7 @@ document
     saveData(data);
     e.target.reset();
     mymodal.hide();
+
     gettransactions();
 
     alert('Lançamento adicionado com sucesso.');
@@ -69,23 +68,25 @@ function gettransactions() {
   if (transactions.length) {
     transactions.forEach(item => {
       let type = 'Entrada';
+
       if (item.type === '2') {
         type = 'Saída';
       }
 
       transactionHtml += `
-      <tr>
-      <th scope="row">${item.date}<th>
-      <td>${item.value.toFixed(2)}</td>
-      <td>${type}</td>
-      <td>${item.description}</td>
-      </tr>
+        <tr>
+          <th scope="row">${item.date}</th>
+          <td>${item.value.toFixed(2)}</td>
+          <td>${type}</td>
+          <td>${item.description}</td>
+        </tr>
       `;
     });
   }
 
   document.getElementById('transactions-list').innerHTML = transactionHtml;
 }
+
 function saveData(data) {
   localStorage.setItem(data.login, JSON.stringify(data));
 }
