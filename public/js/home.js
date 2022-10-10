@@ -12,7 +12,7 @@ document
 
 //ADICIONAR LANÇAMENTO
 document
-  .getElementById('transaction-form')
+  .getElementById('transactions-form')
   .addEventListener('submit', function (e) {
     e.preventDefault();
 
