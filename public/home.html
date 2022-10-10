@@ -19,7 +19,7 @@
   </head>
   <body id="app">
     <header>
-      <nav class="navbar navbar-expand bg-white">
+      <nav class="navbar navbar-expand navbar-light bg-white">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">
             <img
@@ -67,14 +67,14 @@
               >
                 <i class="bi bi-person-circle fs-4"></i>
               </button>
-              <ul
+                <ul
                 class="dropdown-menu logout"
-                aria-labelledby="dropdownMenuButton1"
-              >
-                <li>
+                aria-labelledby="dropdownMenuButton1">
+                  <li>
                   <button class="dropdown-item" id="button-logout">Sair</button>
-                </li>
-              </ul>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -85,7 +85,7 @@
         <div class="row">
           <div class="col mt-4 justify-content-start align-items-center">
             <i class="bi bi-cash-coin color-primary icon-detail"></i>
-            <span class="fs2" id="total">R$ 0,00</span>
+            <span class="fs-2" id="total">R$ 0,00</span>
           </div>
           <div class="col d-flex mt-4 justify-content-end">
             <div class="text-center">
@@ -114,7 +114,7 @@
                   ></span>
                 </div>
                 <div class="col-12 my-2">
-                  <hr />
+                  <hr>
                 </div>
               </div>
               <div class="row">
@@ -166,7 +166,7 @@
                 aria-label="Close"
               ></button>
             </div>
-            <form id="transaction-form">
+            <form id="transactions-form">
               <div class="modal-body">
                 <div class="mb-3">
                   <label for="value-input" class="form-label">Valor</label>
